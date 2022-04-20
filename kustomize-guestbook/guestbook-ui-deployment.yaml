@@ -14,8 +14,10 @@ spec:
         app: guestbook-ui
     spec:
       containers:
-      - image: gcr.io/heptio-images/ks-guestbook-demo:0.1
+      - image: nginx:latest
         name: guestbook-ui
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
+      imagePullSecrets:
+        - name: default-secret
